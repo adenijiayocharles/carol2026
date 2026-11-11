@@ -86,9 +86,9 @@ canvas {
 /* Invisible hit area over the photo circle, active until a photo is added */
 .add-hit {
   position: absolute;
-  left: calc((246.5 - 190) / 1080 * 100%);
-  top: calc((547.5 - 190) / 1350 * 100%);
-  width: calc(380 / 1080 * 100%);
+  left: calc((362 - 322) / 1080 * 100%);
+  top: calc((587.5 - 322) / 1350 * 100%);
+  width: calc(644 / 1080 * 100%);
   aspect-ratio: 1;
   border: 0;
   border-radius: 50%;

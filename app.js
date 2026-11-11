@@ -4,9 +4,9 @@
   // Canvas size and the photo circle in the template (measured from assets/template.webp)
   const W = 1080;
   const H = 1350;
-  const CX = 246.5;
-  const CY = 547.5;
-  const R = 184; // slightly larger than the transparent hole so no gap shows at the edge
+  const CX = 362;
+  const CY = 587.5;
+  const R = 320; // slightly larger than the transparent hole so no gap shows at the edge
   const MAX_ZOOM = 4;
   const FILE_NAME = "christmas-concert-2026-i-will-be-there.jpg";
 
@@ -25,7 +25,7 @@
   const buttons = document.querySelector(".buttons");
 
   const frame = new Image();
-  frame.src = "assets/template.webp";
+  frame.src = "assets/template.webp?v=2"; // bump when the template changes so browsers fetch the new one
 
   const state = {
     photo: null,
@@ -61,8 +61,11 @@
     ctx.fillStyle = g;
     ctx.fill();
 
-    // camera icon
-    ctx.translate(CX, CY - 38);
+    // camera icon + label, designed at radius 184 and scaled to the circle
+    const k = R / 184;
+    ctx.translate(CX, CY);
+    ctx.scale(k, k);
+    ctx.translate(0, -38);
     ctx.fillStyle = "#c8102e";
     roundRect(-52, -30, 104, 74, 14);
     ctx.fill();
@@ -75,14 +78,14 @@
     ctx.arc(0, 7, 15, 0, Math.PI * 2);
     ctx.fillStyle = "#c8102e";
     ctx.fill();
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.translate(0, 38);
 
     ctx.fillStyle = "#123d2c";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = "700 34px Inter, system-ui, sans-serif";
-    ctx.fillText("Tap to add", CX, CY + 72);
-    ctx.fillText("your photo", CX, CY + 114);
+    ctx.fillText("Tap to add", 0, 72);
+    ctx.fillText("your photo", 0, 114);
     ctx.restore();
   }
 
