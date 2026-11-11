@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Christmas Concert 2026 · I Will Be There</title>
+  <meta name="description" content="Add your photo to the RCCG Fountain of Love Christmas Concert 2026 frame and share that you'll be there.">
+  <meta name="theme-color" content="#123d2c">
+  <meta property="og:title" content="Christmas Concert 2026 · I Will Be There">
+  <meta property="og:description" content="Make your own “I will be there” image and share it.">
+  <meta property="og:image" content="assets/template.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="intro">
+      <p class="eyebrow">RCCG Fountain of Love presents</p>
+      <h1>Christmas Concert <span>2026</span></h1>
+      <p class="lede">Add your photo, then share it to let everyone know you’ll be there.</p>
+    </header>
+
+    <section class="stage" aria-label="Your image">
+      <div class="canvas-box" id="canvasBox">
+        <canvas id="canvas" width="1080" height="1350" aria-label="Preview of your I will be there image"></canvas>
+        <button class="add-hit" id="addHit" type="button" aria-label="Add your photo"></button>
+      </div>
+      <p class="hint" id="hint" hidden>Drag to move your photo. Pinch or use the slider to zoom.</p>
+    </section>
+
+    <section class="controls">
+      <input type="file" id="file" accept="image/*" hidden>
+
+      <div class="zoom" id="zoomRow" hidden>
+        <label for="zoom">Zoom</label>
+        <input type="range" id="zoom" min="1" max="4" step="0.01" value="1">
+      </div>
+
+      <div class="buttons">
+        <button class="btn primary" id="pickBtn" type="button">Add your photo</button>
+        <button class="btn primary" id="downloadBtn" type="button" hidden>Download image</button>
+        <button class="btn secondary" id="shareBtn" type="button" hidden>Share</button>
+        <button class="btn ghost" id="changeBtn" type="button" hidden>Change photo</button>
+      </div>
+      <p class="privacy">Your photo stays on your device. Nothing is uploaded.</p>
+    </section>
+
+    <footer class="foot">
+      <p>RCCG Fountain of Love · 31 Palmerston Road, Aberdeen AB11 5QP</p>
+      <p><a href="https://www.fountainoflove.org.uk" rel="noopener">fountainoflove.org.uk</a> · @folrccg</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
