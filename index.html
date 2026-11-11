@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
   <main class="wrap">
@@ -32,6 +32,8 @@
 
     <section class="controls">
       <input type="file" id="file" accept="image/*" hidden>
+      <!-- capture forces the camera to open; without it some Android phones only show the gallery -->
+      <input type="file" id="cameraFile" accept="image/*" capture="user" hidden>
 
       <div class="zoom" id="zoomRow" hidden>
         <label for="zoom">Zoom</label>
@@ -39,10 +41,12 @@
       </div>
 
       <div class="buttons">
-        <button class="btn primary" id="pickBtn" type="button">Add your photo</button>
         <button class="btn primary" id="downloadBtn" type="button" hidden>Download image</button>
         <button class="btn secondary" id="shareBtn" type="button" hidden>Share</button>
-        <button class="btn ghost" id="changeBtn" type="button" hidden>Change photo</button>
+      </div>
+      <div class="source-row" id="sourceRow">
+        <button class="btn primary" id="cameraBtn" type="button" hidden>Take a selfie</button>
+        <button class="btn primary" id="pickBtn" type="button">Choose photo</button>
       </div>
       <p class="privacy">Your photo stays on your device. Nothing is uploaded.</p>
     </section>
@@ -52,6 +56,6 @@
       <p><a href="https://www.fountainoflove.org.uk" rel="noopener">fountainoflove.org.uk</a> · @folrccg</p>
     </footer>
   </main>
-  <script src="app.js?v=2"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

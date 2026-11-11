@@ -19,7 +19,10 @@
   const zoomRow = $("zoomRow");
   const hint = $("hint");
   const pickBtn = $("pickBtn");
-  const changeBtn = $("changeBtn");
+  const cameraBtn = $("cameraBtn");
+  const cameraInput = $("cameraFile");
+  const isTouch = window.matchMedia("(pointer: coarse)").matches;
+  cameraBtn.hidden = !isTouch;
   const downloadBtn = $("downloadBtn");
   const shareBtn = $("shareBtn");
   const buttons = document.querySelector(".buttons");
@@ -176,9 +179,10 @@
     zoomInput.value = "1";
 
     box.classList.add("has-photo");
-    pickBtn.hidden = true;
+    document.body.classList.add("has-photo-page");
+    cameraBtn.textContent = "Retake selfie";
+    pickBtn.textContent = isTouch ? "Choose another" : "Change photo";
     downloadBtn.hidden = false;
-    changeBtn.hidden = false;
     shareBtn.hidden = !canShareFiles();
     buttons.classList.toggle("two", !shareBtn.hidden);
     zoomRow.hidden = false;
@@ -186,10 +190,16 @@
     draw();
   }
 
+  function openCamera() {
+    cameraInput.value = "";
+    cameraInput.click();
+  }
+
   pickBtn.addEventListener("click", openPicker);
-  changeBtn.addEventListener("click", openPicker);
+  cameraBtn.addEventListener("click", openCamera);
   $("addHit").addEventListener("click", openPicker);
   fileInput.addEventListener("change", () => loadPhoto(fileInput.files[0]));
+  cameraInput.addEventListener("change", () => loadPhoto(cameraInput.files[0]));
 
   // Drag-and-drop on desktop
   box.addEventListener("dragover", (e) => e.preventDefault());
