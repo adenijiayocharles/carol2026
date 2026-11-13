@@ -68,7 +68,7 @@
     const k = R / 184;
     ctx.translate(CX, CY);
     ctx.scale(k, k);
-    ctx.translate(0, -38);
+    ctx.translate(0, -80);
     ctx.fillStyle = "#c8102e";
     roundRect(-52, -30, 104, 74, 14);
     ctx.fill();
@@ -81,14 +81,14 @@
     ctx.arc(0, 7, 15, 0, Math.PI * 2);
     ctx.fillStyle = "#c8102e";
     ctx.fill();
-    ctx.translate(0, 38);
+    ctx.translate(0, 80);
 
     ctx.fillStyle = "#123d2c";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.font = "700 34px Inter, system-ui, sans-serif";
-    ctx.fillText("Tap to add", 0, 72);
-    ctx.fillText("your photo", 0, 114);
+    ctx.fillText("Tap to add", 0, 30);
+    ctx.fillText("your photo", 0, 72);
     ctx.restore();
   }
 
