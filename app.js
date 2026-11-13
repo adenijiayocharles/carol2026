@@ -4,9 +4,9 @@
   // Canvas size and the photo circle in the template (measured from assets/template.webp)
   const W = 1080;
   const H = 1350;
-  const CX = 362;
-  const CY = 587.5;
-  const R = 320; // slightly larger than the transparent hole so no gap shows at the edge
+  const CX = 353;
+  const CY = 583;
+  const R = 327; // slightly larger than the transparent hole so no gap shows at the edge
   const MAX_ZOOM = 4;
   const FILE_NAME = "christmas-concert-2026-i-will-be-there.jpg";
 
@@ -28,7 +28,7 @@
   const buttons = document.querySelector(".buttons");
 
   const frame = new Image();
-  frame.src = "assets/template.webp?v=2"; // bump when the template changes so browsers fetch the new one
+  frame.src = "assets/template.webp?v=3"; // bump when the template changes so browsers fetch the new one
 
   const state = {
     photo: null,
